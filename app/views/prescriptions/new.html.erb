@@ -1,0 +1,45 @@
+<%= form_for @prescription do |meds| %>
+  <p>
+    <%= meds.label :name %>
+    <%= meds.text_field :name %>
+    <% if @prescription.errors[:name].any? %>
+      <p class="errors"><%= @prescription.errors[:name].first %></p>
+    <% end %>
+  </p>
+
+  <p>
+    <%= meds.label :dosage %>
+    <%= meds.text_field :dosage %>
+    <% if @prescription.errors[:dosage].any? %>
+    <p class="errors"><%= @prescription.errors[:dosage].first %></p>
+    <% end %>
+  </p>
+
+  <p>
+    <%= meds.label :schedule %>
+    <%= meds.text_field :schedule %>
+      <% if @prescription.errors[:schedule].any? %>
+         <p class="errors"><%= @prescription.errors[:schedule].first %></p>
+      <% end %>
+  </p>
+
+  <p>
+    <%= meds.label :start_dates %>
+    <%= meds.date_select (:start_dates) %>
+    <% if @prescription.errors[:start_dates].any? %>
+    <p class="errors"><%= @prescription.errors[:start_dates].first %></p>
+  <% end %>
+  </p>
+  <p>
+    <%= meds.label :end_dates %>
+    <%= meds.date_select (:end_dates) %>
+    <% if @prescription.errors[:end_dates].any? %>
+    <p class="errors"><%= @prescription.errors[:end_dates].first %></p>
+  <% end %>
+  </p>
+
+  <p>
+    <%= meds.submit "Create Prescription" %>
+  </p>
+
+<% end %>

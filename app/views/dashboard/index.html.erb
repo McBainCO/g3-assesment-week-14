@@ -8,9 +8,9 @@
   </tr>
   </thead>
   <tbody>
-  <% @patients.each do |patient| %>
+  <% @patients.each do |p| %>
     <tr>
-      <td><%= full_name(patient) %></td>
+   <td><%= link_to full_name(p), "patients/#{p.id}" %></td>
     </tr>
   <% end %>
   </tbody>

@@ -4,7 +4,8 @@ class PatientsController < ApplicationController
   end
 
   def show
-    @patient = Patients(params[:first_name, :last_name])
+    @patient = Patient.find(params[:id])
+    @prescriptions = Prescription.order(:name)
   end
 
 end
